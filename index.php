@@ -9,8 +9,7 @@ session_start();
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
+  <head> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -97,9 +96,7 @@ foreach($db->tampil_data() as $x){
 </table>
 
 </div>
- 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  
     </body>
 </html>
 <?php session_destroy()?>
