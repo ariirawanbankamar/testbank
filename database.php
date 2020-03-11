@@ -57,18 +57,7 @@ class database{
     
     ");
   }
-
-  // function input2($dob){
-  //   mysqli_query($this->conn,"truncate table temp");
-  //   mysqli_query($this->conn,"insert into temp values
-  //   ('','$dob')");
-  // }
-
-  // function cek_valid($dob){
-  //   mysqli_query($this->conn,"select dob from temp");
-    
-    
-  // }
+ 
 
   function hapus($id){
      
@@ -78,7 +67,16 @@ class database{
     }
     return $hasil;
   }
-
+  function cetak($id){
+     
+    $data = mysqli_query($this->conn,"SELECT * FROM debtor as a 
+    join purpose as b on a.loan_purpose = b.id_purpose
+    join period as c on c.id_period = a.loan_period where a.id_debtor='$id'");
+    while($d = mysqli_fetch_array($data)){
+      $hasil[] = $d;
+    }
+    return $hasil;
+  }
   function edit($id){
      
     $data = mysqli_query($this->conn,"select * from debtor where id_debtor='$id'");

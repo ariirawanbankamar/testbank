@@ -18,7 +18,7 @@ session_start();
   <body>
   <div class="container">
   <br><br><br>
-    <h1 class="breadcrumb">Input Debtor's Data</h1>
+    <h1 class="breadcrumb">Data Debitur</h1>
     
     <a class="btn btn-primary" href="input.php">Input Data</a><br><br><br>
 <?php 
@@ -83,6 +83,7 @@ foreach($db->tampil_data() as $x){
       <td>
         <a class="btn btn-mini btn-info btn-sm" href="edit.php?id=<?php echo $x['id_debtor']; ?>&aksi=edit">Edit</a>
         <a class="btn btn-mini btn-danger btn-sm" href="proses.php?id=<?php echo $x['id_debtor']; ?>&aksi=hapus">Delete</a>
+        <a class="btn btn-mini btn-danger btn-sm" href="cetak.php?id=<?php echo $x['id_debtor']; ?>&aksi=print">To PDF</a>      
       </td>
     </tr>
 <?php $r++;} }?>
@@ -94,7 +95,6 @@ foreach($db->tampil_data() as $x){
     </tr>
   </tfoot>
 </table>
-
 </div>
   
     </body>

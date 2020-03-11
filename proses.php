@@ -39,7 +39,7 @@ if($aksi == "tambah"){
  }else if ($verktpyr !== $verdobyr) {
   $_SESSION["errordate"] = "Year didn't match with KTP";
  }
- 
+
   else {
     $res1 = "1";
   }
@@ -95,6 +95,10 @@ if ($res1 == '1' && $res2 == '1') {
 
  header("location:index.php"); 
  
+ }
+ elseif($aksi == "print") {
+  $db->cetak($_GET['id']);
+	header("location:cetak.php");
  }
  
 ?>
