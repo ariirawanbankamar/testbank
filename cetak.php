@@ -2,6 +2,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 include 'database.php';
+ 
 
 $db = new database(); 
 $mpdf = new \Mpdf\Mpdf();
@@ -13,7 +14,10 @@ foreach($db->cetak($_GET['id']) as $d){
 
 if ($d['sex_debtor'] =='1') { $sx = "Male";} else { $sx = "Female"; };
 $html.='<h1>Hai, '. $d['name_debtor'] .', here is your detail :</h1>
-<table class="table">
+<table border="1">
+<tr>
+<th colspan="2">Description</th>
+</tr>
 <tr><td>First Name</td><td>'. $d['name_debtor'] .'</td></tr>
 <tr><td>Last Name</td><td>'. $d['name_debtor2'] .'</td></tr>
 <tr><td>KTP</td><td>'. $d['ktp_debtor'] .'</td></tr>
