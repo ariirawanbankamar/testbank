@@ -19,7 +19,8 @@ session_start();
   <div class="container">
   <br><br><br>
     <h1 class="breadcrumb">Data Debitur</h1>
-    
+    </div>
+    <div class="jumbotron">
     <a class="btn btn-primary" href="input.php">Input Data</a><br><br><br>
 <?php 
 if (!empty($_SESSION["errordate"])) {?>

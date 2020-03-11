@@ -9,8 +9,8 @@ $mpdf = new \Mpdf\Mpdf();
 
 foreach($db->cetak($_GET['id']) as $d){
 
-  $r =  $d['name_debtor'].'.pdf' ; 
-  
+  $r =  $d['name_debtor'].' - '.$d['ktp_debtor'] .'.pdf' ; 
+
 if ($d['sex_debtor'] =='1') { $sx = "Male";} else { $sx = "Female"; };
 $html.='<h1>Hai, '. $d['name_debtor'] .', here is your detail :</h1>
 <table class="table">
